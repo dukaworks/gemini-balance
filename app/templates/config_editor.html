@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}配置编辑器 - Gemini Balance{%
+{% extends "base.html" %} {% block title %}Gemini Crosslink - 配置中心{%
 endblock %} {% block head_extra_styles %}
 <style>
   /* config_editor.html specific styles */
@@ -813,7 +813,7 @@ endblock %} {% block head_extra_styles %}
         alt="Gemini Balance Logo"
         class="h-9 inline-block align-middle mr-2"
       />
-      Gemini Balance - 配置编辑
+      Gemini Crosslink - 配置中心
     </h1>
 
     <!-- Navigation Tabs -->
@@ -955,7 +955,7 @@ endblock %} {% block head_extra_styles %}
         <!-- API密钥列表 -->
         <div class="mb-6">
           <label for="API_KEYS" class="block font-semibold mb-2 text-gray-800"
-            >API密钥列表
+            >AI服务商API密钥列表
             <i class="fas fa-question-circle text-gray-400 ml-1 cursor-help" title="Gemini API密钥列表，每行一个"></i>
           </label>
           <div class="mb-2">
@@ -1005,18 +1005,18 @@ endblock %} {% block head_extra_styles %}
               class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2"
               id="addApiKeyBtn"
             >
-              <i class="fas fa-plus"></i> 添加密钥
+              <i class="fas fa-plus"></i> 添加AI服务商密钥
             </button>
           </div>
         </div>
 
-        <!-- 允许的令牌列表 -->
+        <!-- 本平台用户登录许可令牌列表 -->
         <div class="mb-6">
           <label
             for="ALLOWED_TOKENS"
             class="block font-semibold mb-2 text-gray-800"
-            >允许的令牌列表
-            <i class="fas fa-question-circle text-gray-400 ml-1 cursor-help" title="允许访问API的令牌列表"></i>
+            >登录许可令牌列表
+            <i class="fas fa-question-circle text-gray-400 ml-1 cursor-help" title="可登录本平台的许可令牌"></i>
           </label>
           <div class="array-container" id="ALLOWED_TOKENS_container">
             <!-- 数组项将在这里动态添加 -->
@@ -1027,7 +1027,7 @@ endblock %} {% block head_extra_styles %}
               class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2"
               onclick="addArrayItem('ALLOWED_TOKENS')"
             >
-              <i class="fas fa-plus"></i> 添加令牌
+              <i class="fas fa-plus"></i> 添加登录令牌
             </button>
           </div>
         </div>
@@ -1035,8 +1035,8 @@ endblock %} {% block head_extra_styles %}
         <!-- 认证令牌 -->
         <div class="mb-6">
           <label for="AUTH_TOKEN" class="block font-semibold mb-2 text-gray-800"
-            >认证令牌
-            <i class="fas fa-question-circle text-gray-400 ml-1 cursor-help" title="用于API认证的令牌"></i>
+            >第三方接入访问API密钥
+            <i class="fas fa-question-circle text-gray-400 ml-1 cursor-help" title="用于API认证的密钥"></i>
           </label>
           <div class="flex items-center">
             <div
@@ -1066,7 +1066,7 @@ endblock %} {% block head_extra_styles %}
         <!-- API基础URL -->
         <div class="mb-6">
           <label for="BASE_URL" class="block font-semibold mb-2 text-gray-700"
-            >API基础URL
+            >代理转发API缺省URL(缺省是Gemini API, 也支持OpenAI兼容API)
             <i class="fas fa-question-circle text-gray-400 ml-1 cursor-help" title="Gemini API的基础URL"></i>
           </label>
           <input
@@ -1083,7 +1083,7 @@ endblock %} {% block head_extra_styles %}
           <label
             for="CUSTOM_HEADERS"
             class="block font-semibold mb-2 text-gray-700"
-            >自定义Headers
+            >自定义Header(可选)
             <i class="fas fa-question-circle text-gray-400 ml-1 cursor-help" title="在这里添加的键值对将被添加到所有出站API请求的Header中"></i>
           </label>
           <div
